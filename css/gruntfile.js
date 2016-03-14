@@ -10,7 +10,7 @@ module.exports = function(grunt) {
           optimization: 2
         },
         files: {
-          "LandingPageStyles.css": "styles.less" // destination file and source file
+          "LandingPageStyles.css": "main.less" // destination file and source file
         }
       }
     },
