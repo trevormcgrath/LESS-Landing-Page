@@ -1,6 +1,55 @@
+/**** LESS Variable Imports ****/
 @import "variables.less";
+/**** LESS Reset to remove all browser default styling ****/
+@import "reset.less";
+
+body{
+	font-family: @font-family;
+	padding:0px;
+	margin:0px;
+}
+
+#masterContainer{
+	padding:0 5% 0 5%;
+}
+
+.clear{clear:both;}
+
+header{
+
+	nav{
+
+		height:60px;
+
+		img{
+			max-width: 50px;
+		}
+
+		#rightNav{
+			float: right;
+		}
+
+		#rightNav li {
+			list-style:none;
+			float: left;
+		}
+	}
+	
+	.section-one{
+	
+		text-align: @cent;
+
+		p{
+			font-style: @i;
+		}
+
+	}
+
+}
 
 
+
+/*
 nav{
 	
 	.navLeft{
@@ -36,4 +85,4 @@ nav{
 h1{
 	color: blue;
 	font-size: 40px;
-}
+}*/
