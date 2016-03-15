@@ -47,14 +47,11 @@ header{
 			float:left;
 		}
 
-		/*Strip the ul of padding and list styling*/
-		ul {
+		.rightNav{
 			float: right;
-			list-style-type:none;
 		}
 
-		/*Create a horizontal list with spacing*/
-		#rightNav>li {
+		.rightNav li {
 			list-style:none;
 			float: left;
 			text-transform: @upp;
@@ -64,123 +61,17 @@ header{
 			color:@forest;
 		}
 
-		/*Style for menu links*/
-		#rightNav li a {
-			display:block;
-			color: @forest;
-		}
-
-		/*Hover state for top level links*/
-		#rightNav li:hover a {
-			background-color: @forest-hover;
-			color:white;
-		}
-
-		#subMenu{
-			position: absolute;
-		}
-
-		/*Style for dropdown links*/
-		li:hover ul a {
-			background: @forest-hover;
-			color: @white;
-			height: 40px;
-		}
-
-		/*Hover state for dropdown links*/
-		li:hover ul a:hover {
-			background: @white;
-			color: @forest;
-		}
-
-		/*Hide dropdown links until they are needed*/
-		li ul {
-			display: none;
-		}
-
-		/*Make dropdown links vertical*/
-		li ul li {
-			display: block;
-			float: none;
-		}
-
-		/*Prevent text wrapping*/
-		li ul li a {
-			width: auto;
-			min-width: 100px;
-			padding: 0 20px;
-		}
-
-		/*Display the dropdown on hover*/
-		ul li a:hover + .hidden, .hidden:hover {
-			display: block;
-		}
-
-		/*Style 'show menu' label button and hide it by default*/
-		.show-menu {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			text-decoration: none;
-			color: #fff;
-			background: #19c589;
-			text-align: center;
-			padding: 10px 0;
-			display: none;
-		}
-
-		/*Hide checkbox*/
-		input[type=checkbox]{
-		    display: none;
-		}
-
-
-		/*Responsive Styles*/
-
-		@media screen and (max-width : 515px){
-			/*Make dropdown links appear inline*/
-			ul {
-				position: static;
-				display: none;
-			}
-			/*Create vertical spacing*/
-			li {
-				margin-bottom: 1px;
-			}
-			/*Make all menu links full width*/
-			ul li, li a {
-				width: 100%;
-			}
-			/*Display 'show menu' link*/
-			.show-menu {
-				display:block;
-			}
-		}
-
-		/*
-		#rightNav{
-			float: right;
-		}
-
-		#rightNav li {
-			list-style:none;
-			float: left;
-			text-transform: @upp;
-			padding:5px 15px;
-			margin:14px 0px;
-			margin-right: 10px;
-			color:@forest;
-		}
-
-		#rightNav li:hover{
+		.rightNav li:hover{
 			border-bottom: 1px solid @forest;
 		}
 
-		ul#rightNav ul { 
+		ul.rightNav ul { 
     		display: none; 
     		position: absolute;
     		left: 0; top: 100%;
 		}
 
-		ul#rightNav li:hover ul { display: block;  }
+		ul.rightNav li:hover ul { display: block;  }
 
 		#support{
 			border:1px solid @forest;
@@ -191,7 +82,7 @@ header{
 		#support:hover{
 			background-color: @forest-hover;
 			color:@white;
-		}*/
+		}
 	}
 
 	#section-one{
