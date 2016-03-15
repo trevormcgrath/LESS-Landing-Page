@@ -1,13 +1,14 @@
 $(document).ready(function() {
 
 	console.log("jQuery v1.12.0 loaded");
-	var one = "hello"; //var 1
-	var two = "world"; // var 2
-	var three = "begin"; // var 3
-	var five = "coding"; // var 4
+	
+	var size = window.innerWidth;
 
-	//alert(one);
+	console.log(size);
 
-
+	$('.has-Submenu').click( function(e) {
+    	e.preventDefault();
+    	$(this).parent().toggleClass('tap');
+	});
 
 });

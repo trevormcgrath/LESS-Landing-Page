@@ -12,46 +12,64 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
         <link rel="stylesheet" href="library/css/LandingPageStyles.min.css"> <!-- styles for this page -->
+        
     </head>
     <body>
 
         <div id="masterContainer">
 
             <header>
+                <div class="container">
                 
-                <nav>
-                    <a href="#">
-                        <img src="content/my-logo-inverse.png" alt="Default Logo">
-                    </a>
+                    <nav>
+                        <a href="#">
+                            <img src="library/content/navbar-logo.png" alt="Site Default Logo">
+                        </a>
 
-                    <ul id="rightNav">
-                        <a href="#"><li>One</li></a>
-                        <a href="#"><li>Two</li></a>
-                        <a href="#"><li>Three</li></a>
-                    </ul>
+                        <label for="show-menu" class="show-menu">Show Menu</label>
+                        <input type="checkbox" id="show-menu" role="button">
 
-                </nav>
-                <div class="clear"></div>
-            
+                        <ul id="rightNav">
+                            <li><a href="#">Home</a></li>
+                            <li>
+                                <a href="#">Buy</a>
+                                <ul id="subMenu" class="hidden">
+                                    <li><a href="#">One Product</a></li>
+                                    <li><a href="#">Two Product</a></li>
+                                    <li><a href="#">Three Product</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">About</a></li>
+                            <li id="support"><a href="#">Support This</a></li>
+                        </ul>
 
-                <div class="section-one">
-                    <p>Sustainability</p>
-                    <h1>Welcome</h1>
+                    </nav>
+                    <div class="clear"></div>
+                
+                    <div id="section-one">
+                        <p class="fancy">Sustainability</p>
+                        <h1>Starts with you</h1>
+                        <a href="#" id="learn">Learn more</a>
+                    </div>
                 </div>
-
 
             </header>
             
-            
-            <div class="section-two">
+            <section>
+                <div class="container">
+                    <div class="section-two">
                 
-                <h2>This is an h2 in section 2.</h2>
+                        <h2>What can you do to save the environment?</h2>
+                        <p>There are a lot of reasons to care about the environment. Whether that be because you enjoy the outdoors and want to preserve them for generations, oppose climate change, or just respect nature.</p>
+                        <p class="fancy">All Photography Credit Goes To <a href="http://deathtothestockphoto.com/" target="_blank">DeathToTheStockPhoto.com</a></p>
 
-            </div>
+                    </div>  
+                </div>
+            </section>
 
 
         </div>
         <script src="library/js/LandingPageScripts.min.js"></script> <!-- JavaScript for this page -->
-        <script src="http://localhost:35729/livereload.js"></script> <!-- included for the gruntjs livereload -->
+        <script src="http://localhost:35729/livereload.js"></script> <!-- included for the gruntjs livereload, would remove in production -->
     </body>
 </html>

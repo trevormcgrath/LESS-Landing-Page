@@ -1,30 +1,161 @@
-/**** LESS Variable Imports ****/
-@import "variables.less";
 /**** LESS Reset to remove all browser default styling ****/
 @import "reset.less";
+/**** LESS Variable Imports ****/
+@import "variables.less";
 
 body{
 	font-family: @font-family;
-	padding:0px;
-	margin:0px;
+	font-size: @norm-font;
+	padding:0;
+	margin:0;
 }
 
-#masterContainer{
-	padding:0 5% 0 5%;
+/**** General Typography ****/
+h1{font-size: @h1/1.55;text-transform: @upp;}
+h2{font-size: @h2/1.55;font-weight:200;}
+h3{font-size: @h3/1.55;}
+
+@media screen and (min-width: 515px) {
+	h1{font-size: @h1;}
+	h2{font-size: @h2;}
+	h3{font-size: @h3;}
+}
+.fancy{font-style: @i;}
+/**** End General Typography ****/
+
+.container{
+	padding:@container;
 }
 
 .clear{clear:both;}
 
+/**** Begin Header Section ****/
 header{
+
+	text-align: @cent;
+	height: 568px;
+	background: @Section1-bg;
+	background-size: cover;
 
 	nav{
 
-		height:60px;
+		height:62px;
 
 		img{
-			max-width: 50px;
+			max-width: 150px;
+			margin-top: 5px;
+			float:left;
 		}
 
+		/*Strip the ul of padding and list styling*/
+		ul {
+			float: right;
+			list-style-type:none;
+		}
+
+		/*Create a horizontal list with spacing*/
+		#rightNav>li {
+			list-style:none;
+			float: left;
+			text-transform: @upp;
+			padding:5px 15px;
+			margin:14px 0px;
+			margin-right: 10px;
+			color:@forest;
+		}
+
+		/*Style for menu links*/
+		#rightNav li a {
+			display:block;
+			color: @forest;
+		}
+
+		/*Hover state for top level links*/
+		#rightNav li:hover a {
+			background-color: @forest-hover;
+			color:white;
+		}
+
+		#subMenu{
+			position: absolute;
+		}
+
+		/*Style for dropdown links*/
+		li:hover ul a {
+			background: @forest-hover;
+			color: @white;
+			height: 40px;
+		}
+
+		/*Hover state for dropdown links*/
+		li:hover ul a:hover {
+			background: @white;
+			color: @forest;
+		}
+
+		/*Hide dropdown links until they are needed*/
+		li ul {
+			display: none;
+		}
+
+		/*Make dropdown links vertical*/
+		li ul li {
+			display: block;
+			float: none;
+		}
+
+		/*Prevent text wrapping*/
+		li ul li a {
+			width: auto;
+			min-width: 100px;
+			padding: 0 20px;
+		}
+
+		/*Display the dropdown on hover*/
+		ul li a:hover + .hidden, .hidden:hover {
+			display: block;
+		}
+
+		/*Style 'show menu' label button and hide it by default*/
+		.show-menu {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-decoration: none;
+			color: #fff;
+			background: #19c589;
+			text-align: center;
+			padding: 10px 0;
+			display: none;
+		}
+
+		/*Hide checkbox*/
+		input[type=checkbox]{
+		    display: none;
+		}
+
+
+		/*Responsive Styles*/
+
+		@media screen and (max-width : 515px){
+			/*Make dropdown links appear inline*/
+			ul {
+				position: static;
+				display: none;
+			}
+			/*Create vertical spacing*/
+			li {
+				margin-bottom: 1px;
+			}
+			/*Make all menu links full width*/
+			ul li, li a {
+				width: 100%;
+			}
+			/*Display 'show menu' link*/
+			.show-menu {
+				display:block;
+			}
+		}
+
+		/*
 		#rightNav{
 			float: right;
 		}
@@ -32,57 +163,90 @@ header{
 		#rightNav li {
 			list-style:none;
 			float: left;
+			text-transform: @upp;
+			padding:5px 15px;
+			margin:14px 0px;
+			margin-right: 10px;
+			color:@forest;
 		}
-	}
-	
-	.section-one{
-	
-		text-align: @cent;
 
+		#rightNav li:hover{
+			border-bottom: 1px solid @forest;
+		}
+
+		ul#rightNav ul { 
+    		display: none; 
+    		position: absolute;
+    		left: 0; top: 100%;
+		}
+
+		ul#rightNav li:hover ul { display: block;  }
+
+		#support{
+			border:1px solid @forest;
+			margin-top: 12px!important;
+			border-radius: @bordr-rd;
+		}
+
+		#support:hover{
+			background-color: @forest-hover;
+			color:@white;
+		}*/
+	}
+
+	#section-one{
+		
+		margin-top: 90px;
+
+		h1{
+			margin:30px 0;
+		}
+
+		#learn{
+			text-transform: @upp;
+			text-decoration: none;
+			background-color:@forest;
+			padding:12px 30px;
+			border-radius: @bordr-rd;
+			color: @white;
+		}
+
+		#learn:hover{
+			background-color: @forest-hover;
+		}
+
+		@media screen and (min-width: 515px) {
+			margin-top: 120px;
+			p{font-size: 20px;}
+		}
+
+	}
+
+}
+/**** End Header Section ****/
+
+/**** Begin Second Section ****/
+section{
+
+	text-align: @cent;
+	padding:50px 0;
+
+	.section-two{
+		
 		p{
-			font-style: @i;
+			color:@section-text;
+			margin:25px 0;
+		}
+
+		a{
+			color: @forest;
+		}
+		a:hover{
+			border-bottom: 3px solid @forest;
 		}
 
 	}
-
 }
+/**** End Second Section ****/
 
 
-
-/*
-nav{
-	
-	.navLeft{
-		width:100px;
-	}
-
-	.navRight{
-		padding:0;
-		margin: 0;
-	}
-
-	.navRight li{
-		list-style: none;
-		float: left;
-		font-size: 16px;
-	}
-
-}
-
-.firstSection{
-	
-	.pageTitle{
-		font-style:@i;
-		font-size: 20px;
-	}
-
-	h1{
-		font-size:45px;
-	}
-
-}
-
-h1{
-	color: blue;
-	font-size: 40px;
-}*/
