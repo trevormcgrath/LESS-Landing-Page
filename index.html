@@ -5,7 +5,7 @@
         <meta name="description" content="A 'Lorem Ipsum' landing page site to practice modern CSS and responsive design.">
         <meta name="keywords" content="HTML5,CSS3,JavaScript,jQuery">
         <meta name="author" content="Trevor McGrath, https://github.com/trevormcgrath">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Lorem Ipsum Landing Page</title>
 
         <!-- importing jQuery v1.12.0 -->
@@ -20,20 +20,47 @@
 
             <header>
                 <div class="container">
-                
+
                     <nav>
+
                         <a href="#">
                             <img src="library/content/navbar-logo.png" alt="Site Default Logo">
                         </a>
 
-                        <ul class="rightNav">
-                            <a href="#"><li>Home</li></a>
-                            <a href="#"><li>Buy</li></a>
-                            <a href="#"><li>About</li></a>
-                            <a href="#"><li id="support">Support This</li></a>
+                        <ul class="main-nav">
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">Buy</a>
+                                <!--<ul>
+                                    <li><a href="#">Sub Menu 1</a></li>
+                                    <li><a href="#">Sub Menu 2</a></li>
+                                    <li><a href="#">Sub Menu 3</a></li>
+                                </ul>-->
+                            </li>
+                          <li><a href="#">About</a></li>
+                          <li id="support"><a href="#">Support This</a></li>
+                          <!--<li class="icon">
+                            <a id="navBtn" style="font-size:15px;">☰</a>
+                          </li>-->
                         </ul>
+                        <div class="nav-handle">☰</div>
 
+
+                    <!--
+                        <ul class="rightNav">
+                            <li><a href="#">Home</a>
+                            <li class="hasSub"><a href="#">Buy</a>
+                                <ul class="subMenu">
+                                    <li><a href="#">Sub Menu 1</a></li>
+                                    <li><a href="#">Sub Menu 2</a></li>
+                                    <li><a href="#">Sub Menu 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">About</a></li>
+                            <li id="support"><a href="#">Support This</a></li>
+                        </ul>
+                        <a href="#" id="pull">☰</a>-->
                     </nav>
+
                     <div class="clear"></div>
                 
                     <div id="section-one">
