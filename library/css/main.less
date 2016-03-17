@@ -29,15 +29,126 @@ h3{font-size: @h3/1.55;}
 
 .clear{clear:both;}
 
+.transitions{
+	transition:@trns;
+	-webkit-transition:@trns;
+	-moz-transition:@trns; 
+	-o-transition:@trns;
+}
+.transition-maxHeights{
+	transition: max-height @trns ease-in;
+	-webkit-transition: max-height @trns ease-in;
+	-moz-transition: max-height @trns ease-in; 
+	-o-transition: max-height @trns ease-in;
+}
+.brdr-style{
+	border-radius: @bordr-rd;
+}
+
 /**** Begin Header Section ****/
 header{
 
 	text-align: @cent;
 	height: 568px;
-	background: @Section1-bg;
+	background: @section1-bg;
 	background-size: cover;
 
 	nav{
+
+		height:62px;
+
+		img{
+			max-width: 150px;
+			margin-top: 5px;
+			float:left;
+		}
+
+		#support{
+			border:1px solid @forest;
+			margin-top: 13px!important;
+			border-radius: @bordr-rd;
+		}
+
+		#support a{
+			margin:0;
+		}
+
+		#support:hover{
+			.transitions;
+			background-color: @forest-hover;
+			color:@white;
+		}
+
+		ul{
+			list-style: none;
+			float: right;
+		}
+
+		ul li{
+			float:left;
+
+		}
+
+		ul li a{
+			display: inline-block;
+			padding: 5px 15px;
+			margin:15px 0px;
+			color:@forest;
+		}
+		
+		ul li:hover{
+
+		}
+
+		ul li a:hover{
+			background-color: @forest-hover;
+			color: @white;
+			.transitions;
+			.brdr-style;
+		}
+
+		.sub-content{
+			position: absolute;
+			top:62px;
+			overflow: hidden;
+			max-height: 0;
+		}
+
+		.sub-nav{
+			
+		}
+
+		.sub-nav ul{
+			max-width: 120px;
+		}
+
+		.sub-nav ul li{
+			width:100%;
+		}
+
+		.sub-nav ul li a{
+			display: block;
+			margin:0 auto;
+			width: 100%;
+			padding:5px 0;
+		}
+
+		ul li a:focus{
+			background-color: @forest-softer;
+			.brdr-style;
+		}
+
+		ul li a:focus ~ .sub-content{
+			max-height:200px;
+			.transition-maxHeights;
+		}
+
+
+
+
+	}
+
+	/* start of nav for button drop down nav{
 
 		height:62px;
 
@@ -54,10 +165,7 @@ header{
 		}
 
 		#support:hover{
-			transition:@trns;
-			-webkit-transition:@trns;
-			-moz-transition:@trns; 
-			-o-transition:@trns;
+			.transitions;
 			background-color: @forest-hover;
 			color:@white;
 		}
@@ -66,11 +174,8 @@ header{
 			float: right;
 			list-style: none;
 			overflow: hidden;
-			transition: max-height @trns;
-			-webkit-transition: max-height @trns;
-			-moz-transition: max-height @trns; 
-			-o-transition: max-height @trns;
 			margin: 5px 0 0 0;
+			.transition-maxHeights;
 		}
 
 		ul li {
@@ -86,10 +191,7 @@ header{
 			background-color: @forest-hover;
 			border-radius: @bordr-rd;
 			color: @white;
-			transition:@trns;
-			-webkit-transition:@trns;
-			-moz-transition:@trns; 
-			-o-transition:@trns;
+			.transitions;
 
 			a:hover{
 				color: @white;
@@ -126,7 +228,6 @@ header{
 			ul li {
 				box-sizing: border-box;
 				width:100%;
-				/*max-width:135px;*/
 				text-align: @cent;
 				margin:3px 1px!important;
 			}
@@ -144,155 +245,7 @@ header{
 			}
 		}
 
-
-	}
-
-
-
-/*
-	ul.topnav {
-	  list-style-type: none;
-	  overflow: hidden;
-	  float:right;
-	}
-
-	ul.topnav li {
-		float: left;
-		margin:13px 0px;
-		margin-right:3px;
-	}
-
-	ul.topnav li a {
-		color:@forest;
-	  	display: inline-block;
-	  	text-align: center;
-	  	line-height:32px;
-		padding:0 15px;
-	  	transition: 0.3s;
-	}
-
-	ul.topnav li:hover{
-		background:@forest-hover;
-		border-radius: @bordr-rd;
-	}
-
-	ul.topnav li a:hover {
-		color:@white;
-	}
-
-	ul.subMenu{
-		display: none;
-	}
-
-	ul.topnav li.icon {
-		display: none;
-	}
-
-	@media screen and (max-width:680px) {
-	  ul.topnav li:not(:last-child) {display: none;}
-	  ul.topnav li.home{display: none;}
-	  ul.topnav li.home a.home{display: none;}
-	  ul.topnav li.icon {
-	    float: right;
-	    display: inline-block;
-	  }
-	  #support{
-	  	border:0px!important;
-	  }
-	}
-
-	@media screen and (max-width:680px) {
-		ul.topnav.responsive {
-	  		position: relative;
-	  		background-color: @forest-hover;
-	  	}
-	  ul.topnav.responsive li.icon {
-	    position: absolute;
-	    right: 0;
-	    top: 0;
-	  }
-	  ul.topnav.responsive li {
-	    float: none;
-	    display: inline;
-	  }
-	  ul.topnav.responsive li a {
-	    display: block;
-	    text-align: left;
-	  }
-	}
-
-*/
-
-	/*
-	#navDesktop ul{
-		list-style:none;
-		position:relative;
-		float:right;
-	}
-
-	#navDesktop ul a{
-		display:block;
-		color:@forest;
-		line-height:32px;
-		padding:0 15px;
-	}
-
-	#navDesktop ul li{
-		position:relative;
-		float:left;
-		margin:13px 0px;
-		margin-right:3px; 
-	}
-
-	#navDesktop ul li:hover{
-		background:@forest-hover;
-		border-radius: @bordr-rd;
-	}
-
-	li.hasSub:hover{
-		border-top-left-radius: @bordr-rd!important;
-		border-top-right-radius: @bordr-rd!important;
-		border-bottom-left-radius:0!important;
-		border-bottom-right-radius:0!important;
-	}
-
-	#navDesktop ul a:hover{
-		color: @white;
-	}
-
-	#navDesktop ul ul{
-		display:none;
-		position:absolute;
-		top:100%;
-		left:0;
-		background:@forest-hover;
-		padding:0
-	}
-
-	#navDesktop ul ul li{
-		float:none;
-		width:120px
-	}
-
-	#navDesktop ul ul a{
-		line-height:120%;
-		color:@white;
-	}
-
-	#navDesktop ul li:hover > ul{
-		display:block
-	}
-	nav a#pull {
-		display: none;
-	}
-	.changeWidth{
-		width:100%!important;
-	}
-	.changeMargin{
-		margin:0!important;
-	}
-*/
-	
+	} end of nav for button drop down */
 
 
 	#section-one{
