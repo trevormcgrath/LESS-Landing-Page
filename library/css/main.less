@@ -44,6 +44,15 @@ h3{font-size: @h3/1.55;}
 .brdr-style{
 	border-radius: @bordr-rd;
 }
+.drop-down-btn{
+	border-bottom-left-radius:0!important;
+	border-bottom-right-radius:0!important;
+}
+.drop-down-menu{
+	border-top-right-radius:@bordr-rd;
+	border-bottom-left-radius:@bordr-rd;
+	border-bottom-right-radius:@bordr-rd;
+}
 
 /**** Begin Header Section ****/
 header{
@@ -67,6 +76,7 @@ header{
 			border:1px solid @forest;
 			margin-top: 13px!important;
 			border-radius: @bordr-rd;
+			margin-left:2px;
 		}
 
 		#support a{
@@ -92,7 +102,7 @@ header{
 		ul li a{
 			display: inline-block;
 			padding: 5px 15px;
-			margin:15px 0px;
+			margin-top:15px;
 			color:@forest;
 		}
 		
@@ -109,17 +119,18 @@ header{
 
 		.sub-content{
 			position: absolute;
-			top:62px;
 			overflow: hidden;
 			max-height: 0;
 		}
 
-		.sub-nav{
-			
+		.sub-content{
+			background-color: @forest-hover;
+			.drop-down-menu;
 		}
 
 		.sub-nav ul{
 			max-width: 120px;
+			float:none;
 		}
 
 		.sub-nav ul li{
@@ -131,122 +142,71 @@ header{
 			margin:0 auto;
 			width: 100%;
 			padding:5px 0;
+			color:@white;
 		}
 
-		ul li a:focus{
-			background-color: @forest-softer;
-			.brdr-style;
+		a.has-sub-content{
+			.drop-down-btn;
 		}
 
-		ul li a:focus ~ .sub-content{
+		a.has-sub-content:focus{
+			background-color: @forest-hover;
+			.drop-down-btn;
+			color: @white;
+		}
+
+		a.has-sub-content:focus ~ .sub-content{
+			background-color: @forest-hover;
+			color:@white;
 			max-height:200px;
 			.transition-maxHeights;
 		}
 
-
-
-
-	}
-
-	/* start of nav for button drop down nav{
-
-		height:62px;
-
-		img{
-			max-width: 150px;
-			margin-top: 5px;
-			float:left;
-		}
-
-		#support{
-			border:1px solid @forest;
-			margin-top: 12px!important;
-			border-radius: @bordr-rd;
-		}
-
-		#support:hover{
-			.transitions;
-			background-color: @forest-hover;
-			color:@white;
-		}
-
-		ul {
-			float: right;
-			list-style: none;
-			overflow: hidden;
-			margin: 5px 0 0 0;
+		a.has-sub-content:hover ~ .sub-content{
+			max-height:200px;
 			.transition-maxHeights;
 		}
 
-		ul li {
-			display: inline-block;
+		.sub-content:hover {
+    		max-height: 200px;
+		}
+		.sub-content:active {
+			max-height: 200px;
 		}
 
-		ul li a {
-			color:@forest;
-			padding: 0 14px;
-		}
 
-		ul li:hover{
-			background-color: @forest-hover;
-			border-radius: @bordr-rd;
-			color: @white;
-			.transitions;
 
-			a:hover{
-				color: @white;
-			}
-		}
-
-		.nav-handle{
-			width:50px;
-			font-size: 21px;
-			float:right;
-			background-color: @forest;
-			text-align: center;
-			box-sizing: border-box;
-			padding:10px 15px;
-			cursor: pointer;
-			color: @white;
-			border-radius: 10px;
-			margin: 4px 0 0 0;
-			display:none;
-		}
-		
-		@media screen and (max-width:545px) {
+		@media screen and (max-width:520px) {
 			ul{
-				max-height: 0px;
-				float:none;
-				margin:0;
+				display: inline-block;
+				width:88%;
+				text-align: left;
 			}
-			.show-nav{
-				max-height: 20em;
-				background-color: @forest-softer;
-				border-bottom-left-radius:10px!important;
-				border-bottom-right-radius:10px!important;
-			}
-			ul li {
-				box-sizing: border-box;
-				width:100%;
-				text-align: @cent;
-				margin:3px 1px!important;
-			}
-			ul li a{
-				color:@white;
-				width:100%;
-				padding:5px 35px;
-			}
-			.nav-handle{
-				display: block;
+			img{
+				float: none;
 			}
 			#support{
-				margin:3px 1px!important;
-				border:0;
+				margin: 0!important;
+			}
+			ul li a{
+				margin: 0;
+			}
+			.sub-nav ul li a{
+				text-align: center;
+				color:@white;
 			}
 		}
+	
+		@media screen and (max-width:400px) {
+			ul{
+				float:none;
+				display: inline-block;
+				width:100%;
+				text-align: left;
+			}	
+		}
 
-	} end of nav for button drop down */
-
+	}
 
 	#section-one{
 		
