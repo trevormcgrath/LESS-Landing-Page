@@ -15,3 +15,32 @@
 @bordr-rd:20px;
 @white:#FFF;
 @trns:0.2s;
+
+
+
+.transitions{
+	transition:@trns;
+	-webkit-transition:@trns;
+	-moz-transition:@trns; 
+	-o-transition:@trns;
+}
+.transition-maxHeights{
+	transition: max-height @trns ease-in;
+	-webkit-transition: max-height @trns ease-in;
+	-moz-transition: max-height @trns ease-in; 
+	-o-transition: max-height @trns ease-in;
+}
+.brdr-style{
+	border-radius: @bordr-rd;
+}
+.drop-down-btn{
+	border-bottom-left-radius:0!important;
+	border-bottom-right-radius:0!important;
+	border-top-right-radius:@bordr-rd!important;
+	border-top-left-radius:@bordr-rd!important;
+}
+.drop-down-menu{
+	border-top-right-radius:@bordr-rd;
+	border-bottom-left-radius:@bordr-rd;
+	border-bottom-right-radius:@bordr-rd;
+}

@@ -29,33 +29,6 @@ h3{font-size: @h3/1.55;font-weight:200;}
 
 .clear{clear:both;}
 
-.transitions{
-	transition:@trns;
-	-webkit-transition:@trns;
-	-moz-transition:@trns; 
-	-o-transition:@trns;
-}
-.transition-maxHeights{
-	transition: max-height @trns ease-in;
-	-webkit-transition: max-height @trns ease-in;
-	-moz-transition: max-height @trns ease-in; 
-	-o-transition: max-height @trns ease-in;
-}
-.brdr-style{
-	border-radius: @bordr-rd;
-}
-.drop-down-btn{
-	border-bottom-left-radius:0!important;
-	border-bottom-right-radius:0!important;
-	border-top-right-radius:@bordr-rd!important;
-	border-top-left-radius:@bordr-rd!important;
-}
-.drop-down-menu{
-	border-top-right-radius:@bordr-rd;
-	border-bottom-left-radius:@bordr-rd;
-	border-bottom-right-radius:@bordr-rd;
-}
-
 /**** Begin Header Section ****/
 header{
 
@@ -420,15 +393,49 @@ section{
 
 /**** Start Third Section / Social Media Buttons ****/
 section{
-	.section-three{
 
+	padding: 0;
+
+	.section-three{
+		background-color: @forest-hover;
+		
+		.social-container{
+			
+			padding: 30px;
+
+			.social-icons{
+				max-width: 40px;
+				margin: 0 1%;
+				.transitions;
+			}
+
+			.social-icons:hover{
+				opacity: .5;
+				.transitions;
+			}
+		}
 	}
 }
 /**** End Third Section / Social Media Buttons ****/
 
 /**** Start Footer Section ****/
 footer{
-	
+
+	padding:20px 0;
+	text-align: @cent;
+	background-color: #333;
+	color: @white;
+
+	p{
+		margin-bottom:20px;
+	}
+
+	a{
+		color: @forest;
+	}
+	a:hover{
+		border-bottom: 3px solid @forest;
+	}
 }
 /**** End Footer Section ****/
 
