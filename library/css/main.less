@@ -13,7 +13,7 @@ body{
 /**** General Typography ****/
 h1{font-size: @h1/1.55;text-transform: @upp;}
 h2{font-size: @h2/1.55;font-weight:200;}
-h3{font-size: @h3/1.55;}
+h3{font-size: @h3/1.55;font-weight:200;}
 
 @media screen and (min-width: 545px) {
 	h1{font-size: @h1;}
@@ -47,6 +47,8 @@ h3{font-size: @h3/1.55;}
 .drop-down-btn{
 	border-bottom-left-radius:0!important;
 	border-bottom-right-radius:0!important;
+	border-top-right-radius:@bordr-rd!important;
+	border-top-left-radius:@bordr-rd!important;
 }
 .drop-down-menu{
 	border-top-right-radius:@bordr-rd;
@@ -159,7 +161,6 @@ header{
 			background-color: @forest-hover;
 			color:@white;
 			max-height:200px;
-			.transition-maxHeights;
 		}
 
 		a.has-sub-content:hover ~ .sub-content{
@@ -173,8 +174,6 @@ header{
 		.sub-content:active {
 			max-height: 200px;
 		}
-
-
 
 		@media screen and (max-width:520px) {
 			ul{
@@ -197,13 +196,22 @@ header{
 			}
 		}
 	
-		@media screen and (max-width:400px) {
+		@media screen and (max-width:415px) {
 			ul{
 				float:none;
 				display: inline-block;
 				width:100%;
 				text-align: left;
 			}	
+		}
+
+		@media screen and (max-width:365px) {
+			#support{
+				border:0;
+			}
+			ul li a{
+				padding:5px 10px;
+			}
 		}
 
 	}
@@ -223,10 +231,14 @@ header{
 			padding:12px 30px;
 			border-radius: @bordr-rd;
 			color: @white;
+			.transitions;
 		}
 
 		#learn:hover{
 			background-color: @forest-hover;
+			padding:12px*2 30px*2;
+			border-radius: @bordr-rd*2;
+			.transitions;
 		}
 
 		@media screen and (min-width: 545px) {
@@ -259,8 +271,167 @@ section{
 			border-bottom: 3px solid @forest;
 		}
 
-	}
+		.grid{
+			position: relative;
+		    margin: 0 auto;
+		    padding: 1em 0 4em;
+		    max-width: 1200px;
+		    list-style: none;
+		    text-align: center;
+		}
+		.grid figure{
+			position: relative;
+		    float: left;
+		    overflow: hidden;
+		    margin: 10px 1%;
+		    min-width: 320px;
+		    max-width: 580px;
+		    max-height: 360px;
+		    width: 48%;
+		    text-align: center;
+		    cursor: pointer;
+		}
+		.grid figure img{
+			position: relative;
+		    display: block;
+		    min-height: 100%;
+		    max-width: 100%;
+		    opacity: 0.8;
+		}
+
+		/*.grid figure figcaption, .grid figure figcaption > a {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}*/
+		.grid figure figcaption {
+		    padding-top: 20px;
+		    padding-left: 20px;
+		    color: @white;
+		    /*text-transform: uppercase;*/
+		    -webkit-backface-visibility: hidden;
+		    backface-visibility: hidden;
+		}
+
+		/*.grid figure h3 {
+		    word-spacing: -0.15em;
+		    font-weight: 300;
+		}*/
+
+		.grid figure figcaption > a {
+		    z-index: 5;
+		    /*text-indent: 200%;
+		    white-space: nowrap;
+		    font-size: 0;*/
+		    opacity: 0;
+		}
+		.grid figure figcaption, .grid figure figcaption > a {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+
+		figure.image-effects {
+			background: @forest-hover;
+		}
+
+		figure.image-effects img {
+			max-width: none;
+			width: -webkit-calc(100% + 20px);
+			width: calc(100% + 20px);
+			-webkit-transition: opacity @trns, -webkit-transform @trns;
+			transition: opacity @trns, transform @trns;
+			-webkit-transform: translate3d(-10px,0,0);
+			transform: translate3d(-10px,0,0);
+			-webkit-backface-visibility: hidden;
+			/*backface-visibility: hidden;*/
+		}
+
+		figure.image-effects:hover img {
+			opacity: 0.4;
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+
+		figure.image-effects figcaption {
+			text-align: left;
+		}
+
+		figure.image-effects h3 {
+			position: relative;
+			overflow: hidden;
+			max-width: 280px;
+			text-transform: uppercase;
+		}
+
+		figure.image-effects:hover h3::after {
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+
+		figure.image-effects h3::after {
+			-webkit-box-sizing: border-box;
+    		box-sizing: border-box;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: @white;
+			content: '';
+			-webkit-transition: -webkit-transform @trns;
+			transition: transform @trns;
+			-webkit-transform: translate3d(-100%,0,0);
+			transform: translate3d(-100%,0,0);
+		}
+
+		figure.image-effects p {
+			/*padding: 1em 0;*/
+			opacity: 0;
+			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+			-webkit-transform: translate3d(100%,0,0);
+			transform: translate3d(100%,0,0);
+			max-width: 90%;
+		}
+
+		figure.image-effects:hover p {
+			opacity: 1;
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+			color: @white;
+		}
+
+		@media screen and (max-width:755px) {
+			.grid figure{
+				width:100%;
+				float: none;
+    			display: inline-block;
+    			min-width: 274px;
+			}
+		}
+	}/**** this is the end of .section-two ****/
 }
 /**** End Second Section ****/
+
+/**** Start Third Section / Social Media Buttons ****/
+section{
+	.section-three{
+
+	}
+}
+/**** End Third Section / Social Media Buttons ****/
+
+/**** Start Footer Section ****/
+footer{
+	
+}
+/**** End Footer Section ****/
+
+
 
 
